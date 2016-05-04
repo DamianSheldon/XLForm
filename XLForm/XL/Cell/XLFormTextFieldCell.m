@@ -213,6 +213,11 @@ NSString *const XLFormTextFieldLengthPercentage = @"textFieldLengthPercentage";
     if (self.dynamicCustomConstraints){
         [self.contentView removeConstraints:self.dynamicCustomConstraints];
     }
+    
+    if (self.imageView && !self.imageView.superview) {
+        [self.contentView addSubview:self.imageView];
+    }
+    
     NSDictionary * views = @{@"label": self.textLabel, @"textField": self.textField, @"image": self.imageView};
     if (self.imageView.image){
         if (self.textLabel.text.length > 0){

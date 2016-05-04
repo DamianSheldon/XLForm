@@ -69,6 +69,23 @@
         [row.cellConfig setObject:[UIFont fontWithName:@"Helvetica" size:40] forKey:@"textLabel.font"];
         [section addFormRow:row];
         
+        // Text Field with image
+        section = [XLFormSectionDescriptor formSection];
+        [form addFormSection:section];
+        
+        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"Image" rowType:XLFormRowDescriptorTypeText title:nil];
+        row.cellStyle = UITableViewCellStyleDefault;
+        // font
+        [row.cellConfig setObject:[UIFont fontWithName:@"Helvetica" size:30] forKey:@"textLabel.font"];
+
+        // font
+        [row.cellConfig setObject:[UIFont fontWithName:@"Helvetica" size:25] forKey:@"textField.font"];
+
+        [row.cellConfig setObject:[UIImage imageNamed:@"Calendar"] forKey:@"imageView.image"];
+        [row.cellConfigAtConfigure setObject:[NSNumber numberWithFloat:0.8] forKey:XLFormTextFieldLengthPercentage];
+        
+        [section addFormRow:row];
+        
         self.form = form;
     }
     return self;
